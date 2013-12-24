@@ -1,0 +1,14 @@
+{
+	"curly": true,
+    "eqeqeq": true,
+    "immed": true,
+    "latedef": true,
+    "sub": true,
+    "trailing": true,
+    "unused": true,
+    "globals": {
+    	"jQuery": true,
+    	"$": true,
+    	"Handlebars": true
+    }
+}
