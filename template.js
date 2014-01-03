@@ -71,6 +71,9 @@ exports.template = function(grunt, init, done) {
         // Actually copy (and process) files.
         init.copyAndProcess(files, props);
 
+        // create empty directories
+        grunt.file.mkdir('js/vendors');
+
         if (props.handlebars) {
             props.devDependencies['grunt-contrib-handlebars'] = '~0.6.0';
         }
