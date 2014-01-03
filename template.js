@@ -1,3 +1,4 @@
+/* global exports */
 /**
  *  grunt-init-digitaria
  *
@@ -32,7 +33,7 @@ exports.template = function(grunt, init, done) {
             name: 'config_rb_path',
             message: 'Path to the config.rb file',
             warning: 'If it\'s drupal the path will be /sites/all/themes/project-name'
-        }
+        },
         {
             name: 'handlebars',
             message: 'Are handlebars templates going to be used?',
@@ -68,7 +69,7 @@ exports.template = function(grunt, init, done) {
         files = init.filesToCopy(props);
 
         // Actually copy (and process) files.
-        init.copyAndProcess(files, props)
+        init.copyAndProcess(files, props);
 
         if (props.handlebars) {
             props.devDependencies['grunt-contrib-handlebars'] = '~0.6.0';
