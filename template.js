@@ -47,10 +47,8 @@ exports.template = function(grunt, init, done) {
 
     ], function (err, props) {
         var files;
-
-        props.handlebars = /y/i.test(props.handlebars);
-        props.unitTests = /y/i.test(props.unitTests);
-
+        props.handlebars = /y(?!\/N)/i.test(props.handlebars);
+        props.unitTests = /y(?!\/N)/i.test(props.unitTests);
         props.author_name = 'Digitaria, Inc';
         props.author_url = 'http://www.digitaria.com';
         props.devDependencies = {
@@ -72,7 +70,14 @@ exports.template = function(grunt, init, done) {
         init.copyAndProcess(files, props);
 
         // create empty directories
-        grunt.file.mkdir('js/vendors');
+        grunt.file.mkdir('css/sass/buttons');
+        grunt.file.mkdir('css/sass/forms');
+        grunt.file.mkdir('css/sass/layouts');
+        grunt.file.mkdir('css/sass/modules');
+        grunt.file.mkdir('css/sass/typography');
+        grunt.file.mkdir('css/sass/vendor');
+        grunt.file.mkdir('js/vendor');
+        grunt.file.mkdir('images');
 
         if (props.handlebars) {
             props.devDependencies['grunt-contrib-handlebars'] = '~0.6.0';

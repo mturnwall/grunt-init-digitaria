@@ -95,11 +95,11 @@ module.exports = function (grunt) {
             css: {
                 files: ['css/sass/**/*.scss'],
                 tasks: ['compass:dev']
-            },
+            },{% if (handlebars) { %}
             handlebars: {
                 files: ['views/*.handlebars'],
                 tasks: ['handlebars:dev']
-            },
+            },{% } %}
             scripts: {
                 files: ['<%= jshint.files %>'],
                 tasks: ['jshint']
