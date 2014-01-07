@@ -7,16 +7,16 @@ require 'sass-globbing'
 
 # Autoprefixer https://github.com/ai/autoprefixer
 # See install instructions under the Compass heading
-require 'autoprefixer-rails' # remove prefixes not needed
-require 'csso'
+# require 'autoprefixer-rails' # remove prefixes not needed
+# require 'csso'
 
-on_stylesheet_saved do |file|
-  css = File.read(file)
-  File.open(file, 'w') do |io|
-    # io << Csso.optimize( AutoprefixerRails.compile(css) ) # use this for compressed files
-    io << AutoprefixerRails.compile(css, ["last 2 versions", "ie 8"])
-  end
-end
+# on_stylesheet_saved do |file|
+#   css = File.read(file)
+#   File.open(file, 'w') do |io|
+#     # io << Csso.optimize( AutoprefixerRails.compile(css) ) # use this for compressed files
+#     io << AutoprefixerRails.compile(css, ["last 2 versions", "ie 8"])
+#   end
+# end
 
 # Set this to the root of your project when deployed:
 http_path = "{%= config_rb_path %}"

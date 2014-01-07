@@ -45,7 +45,7 @@ module.exports = function (grunt) {
                     environment: 'production'
                 }
             }
-        },
+        },{% if (handlebars) { %}
         handlebars: {
             compile: {
                 options: {
@@ -62,7 +62,7 @@ module.exports = function (grunt) {
                     }
                 ]
             }
-        },
+        },{% } %}
         imagemin: {
             png: {
                 options: {

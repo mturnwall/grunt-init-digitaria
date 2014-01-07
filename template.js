@@ -28,7 +28,7 @@ exports.template = function(grunt, init, done) {
         init.prompt('description'),
         init.prompt('version'),
         init.prompt('repository', ''),
-        init.prompt('jquery_version'),
+        init.prompt('jquery_version', '1.10.2'),
         {
             name: 'config_rb_path',
             message: 'Path to the config.rb file',
@@ -76,7 +76,6 @@ exports.template = function(grunt, init, done) {
         grunt.file.mkdir('css/sass/modules');
         grunt.file.mkdir('css/sass/typography');
         grunt.file.mkdir('css/sass/vendor');
-        grunt.file.mkdir('js/vendor');
         grunt.file.mkdir('images');
 
         if (props.handlebars) {
