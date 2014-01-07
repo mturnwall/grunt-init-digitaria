@@ -38,17 +38,17 @@ exports.template = function(grunt, init, done) {
             name: 'handlebars',
             message: 'Are handlebars templates going to be used?',
             default: 'y/N'
-        },
-        {
-            name: 'unitTests',
-            message: 'Will there be javascript unit testing?',
-            default: 'y/N'
         }
+        // {
+        //     name: 'unitTests',
+        //     message: 'Will there be javascript unit testing?',
+        //     default: 'y/N'
+        // }
 
     ], function (err, props) {
         var files;
         props.handlebars = /y(?!\/N)/i.test(props.handlebars);
-        props.unitTests = /y(?!\/N)/i.test(props.unitTests);
+        // props.unitTests = /y(?!\/N)/i.test(props.unitTests);
         props.author_name = 'Digitaria, Inc';
         props.author_url = 'http://www.digitaria.com';
         props.devDependencies = {
@@ -82,12 +82,12 @@ exports.template = function(grunt, init, done) {
             props.devDependencies['grunt-contrib-handlebars'] = '~0.6.0';
         }
 
-        if (props.unitTests) {
+        // if (props.unitTests) {
             /*
                 TODO
                 Find a good grunt plugin for javascript unit tests (mocha+chai)
              */
-        }        
+        // }        
 
         init.writePackageJSON('package.json', props);
 
